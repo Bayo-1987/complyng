@@ -131,6 +131,13 @@ README.md           This file
 
 `data/agencies.json` is the canonical research artefact and carries the full citation list, including the broken and inaccessible official URLs recorded as evidence.
 
+## License
+
+Two licenses cover two different things here, matching what the app itself claims in its "Cite this record" panel:
+
+- **The dataset and documentation** — `data/agencies.json`, this README, and the in-app findings/citations/scorecard text — are **CC BY 4.0** (free to reuse with attribution). See [`LICENSE-DATA.md`](LICENSE-DATA.md).
+- **The application code** — `index.html` and any accompanying scripts or styles — is **MIT**. See [`LICENSE`](LICENSE).
+
 ## Next, if this is worth developing
 
 1. **Aggregation of the reports.** The reporting flow is deliberately backend-free for the proof of concept — nothing is collected, because collecting it properly means answering who holds it, who can subpoena it, and how a contractor stays unidentifiable in a dataset small enough to deanonymise. That is a governance question before it is an engineering one, and it should be answered with a civil-society partner rather than assumed.
