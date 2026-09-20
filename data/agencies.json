@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "project": "ComplyNG",
+    "purpose": "Statutory compliance eligibility check for Nigerian SMEs bidding on federal public contracts",
+    "research_date": "2026-09-19",
+    "method": "Every published fact traces to a URL fetched on the research date. Absences are recorded as NOT_PUBLISHED and scored, not filled with estimates.",
+    "disclaimer": "Informational only. Not legal or tax advice. Does not submit anything to any agency on a user's behalf."
+  },
+
+  "bid_document_chain": {
+    "summary": "Six statutory items are demanded by federal MDA tender adverts. The demand comes from Public Procurement Act 2007 s.16(6)(d) plus SGF Circular Ref SGF/50/S.52/II of 11 December 2014 - NOT from BPP's own registration form.",
+    "correction_note": "BPP's own published pages do not list NSITF as a registration prerequisite. NSITF appears on bpp.gov.ng only as a Partner Agency link. Practical effect is unchanged - a bidder needs all six - but NSITF does not block the BPP IRR.",
+    "items": ["cac", "nrs_tcc", "pencom", "itf", "nsitf", "bpp"],
+    "also_required_non_statutory": [
+      "Sworn affidavit (no conflict of interest, accuracy of information)",
+      "Audited accounts for the last 3 years",
+      "Bank reference letter",
+      "Company profile and staff CVs",
+      "Evidence of at least 3 similar jobs executed in the last 5 years"
+    ],
+    "sources": [
+      "https://unilag.edu.ng/university-of-lagos-invitation-to-tender-3/",
+      "https://ncat.gov.ng/invitation-to-tender/",
+      "https://www.fmw.gov.ng/themes/front_end_themes_01/images/uploads_images/151170250791458.pdf",
+      "https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf"
+    ]
+  },
+
+  "agencies": [
+    {
+      "id": "cac",
+      "name": "Corporate Affairs Commission",
+      "short": "CAC",
+      "certificate": "Certificate of Incorporation + Status Report + current annual returns filing",
+      "statutory_basis": {
+        "instrument": "Companies and Allied Matters Act 2020, ss. 417-424",
+        "note": "Annual returns filed on Form CAC 19. Return due within 14 days of the AGM per the form itself.",
+        "source": "https://news.cac.gov.ng/wp-content/uploads/2021/03/Annual-return-of-companies.pdf"
+      },
+      "official_fee": {
+        "status": "PUBLISHED_BUT_CONFLICTING",
+        "gazetted": {
+          "annual_returns_share_capital_100k_to_100m_naira": 5000,
+          "annual_returns_above_100m_to_500m_naira": 100000,
+          "status_report_naira": 5000,
+          "letter_of_good_standing_naira": 10000,
+          "certified_true_copy_naira": 5000,
+          "relisting_private_other_than_small_naira": 50000,
+          "instrument": "Gazette No. 92 Vol. 112, 29 May 2025, S.I. No. 6, effective 1 October 2025",
+          "source": "https://news.cac.gov.ng/wp-content/uploads/2025/06/New-Schedule-of-Fees-29th-May-2025.pdf"
+        },
+        "conflict": "CAC's own site still serves a superseded fee schedule at /api/download-fees with different figures - e.g. Status Report and Letter of Good Standing combined at 5,000 naira, and no banded annual-returns table at all. CAC has published no notice reconciling the two.",
+        "conflict_source": "https://www.cac.gov.ng/api/download-fees"
+      },
+      "official_processing_time": {
+        "status": "PUBLISHED",
+        "annual_returns": "24 working hours",
+        "status_report": "Instant",
+        "letter_of_good_standing": "3-5 working days",
+        "certified_true_copy": "12 working hours",
+        "applications_from_state_offices": "7 working days",
+        "source": "https://www.cac.gov.ng/services/service-timelines"
+      },
+      "validity": {
+        "status": "PUBLISHED",
+        "rule": "Annual returns filed at least once every year. Lapse shows the entity as inactive; CAMA allows striking off after 10 consecutive years of non-filing.",
+        "penalty_note": "Annual-return penalties are assessed against the entity AND each officer of the entity.",
+        "source": "https://www.cac.gov.ng/public-notice-on-the-full-application-of-penalties-for-failure-to-file-annual-returns-by-companies-and-recovery-of-penalties-against-company-directors-and-officers/"
+      },
+      "online_end_to_end": {
+        "status": true,
+        "portal": "https://icrp.cac.gov.ng/",
+        "free_verification": "https://icrp.cac.gov.ng/public-search"
+      },
+      "jurisdiction": {
+        "status": "NATIONAL",
+        "detail": "One national portal. Nothing asks which office registered the company. A slower state-office route exists (7 working days)."
+      },
+      "agent_fee_naira": { "low": 7500, "high": 15000, "note": "CAC's own official Facebook page warns agents add up to 5,000 naira or more per year on top of the official fee.", "source": "https://zfrica.com/product/cac-annual-returns-fees/" },
+      "opacity": {
+        "requirements_published": "PARTIAL",
+        "fees_published": "CONFLICTING",
+        "timeline_published": "YES",
+        "forms_available": "YES",
+        "score": 7,
+        "failures": [
+          "Two live, mutually inconsistent fee schedules with no reconciling notice",
+          "No single current requirements checklist for company annual returns; the de facto list is whatever Form CAC 19 prescribes",
+          "No published definition of what disqualifies a company from a Letter of Good Standing"
+        ]
+      }
+    },
+
+    {
+      "id": "nrs_tcc",
+      "name": "Nigeria Revenue Service",
+      "short": "NRS",
+      "certificate": "Tax ID and Tax Clearance Certificate (3 years)",
+      "statutory_basis": {
+        "instrument": "Nigeria Tax Administration Act 2025, ss. 7, 8 and 72",
+        "key_quotes": {
+          "s72_1": "Whenever the relevant tax authority is of the opinion that tax assessed on profits or income of a person has been fully paid or that no tax is due on such profits or income, it shall issue a tax clearance certificate to the person within two weeks of the demand for such certificate by that person or, if not, give reasons for the denial.",
+          "s72_2": "Any Ministry, department or agency of Government or any commercial bank ... shall demand from such person a tax clearance certificate of three years immediately preceding the current year of assessment.",
+          "s8": "The Tax ID is a condition for entering into a contract with any federal or state ministry, department or agency."
+        },
+        "source": "https://siao.ng/wp-content/uploads/2025/09/Nigeria-Tax-Admin-Act-2025.pdf"
+      },
+      "official_fee": { "status": "NOT_PUBLISHED", "detail": "No fee for a TCC is published anywhere on nrs.gov.ng, selfservice.nrs.gov.ng or tcc.firs.gov.ng, and s.72 prescribes none." },
+      "official_processing_time": {
+        "status": "PUBLISHED_IN_STATUTE_ONLY",
+        "statutory_deadline_days": 14,
+        "detail": "Two weeks to issue or give reasons, under NTAA 2025 s.72(1). NRS itself publishes no service-level commitment. Consultants advertise 3-5 weeks against a statutory two weeks.",
+        "source": "https://siao.ng/wp-content/uploads/2025/09/Nigeria-Tax-Admin-Act-2025.pdf"
+      },
+      "validity": { "status": "NOT_PUBLISHED", "detail": "s.72 specifies the three-year lookback and the certificate's contents but says nothing about how long an issued certificate remains valid. NRS publishes nothing. Consultant sites commonly claim one year with no official citation. MDA tenders demand a TCC valid till 31 December of the bid year." },
+      "online_end_to_end": {
+        "status": "PARTIAL",
+        "portals": ["https://selfservice.nrs.gov.ng/", "https://tcc.firs.gov.ng/", "https://taxid.nrs.gov.ng/"],
+        "detail": "Rev360 self-service went live 30 April 2026 with a Tax Clearance module; the legacy FIRS-branded TCC portal is still live. NRS still directs taxpayers to visit the nearest tax office for support."
+      },
+      "jurisdiction": {
+        "status": "NO_RULE_PUBLISHED",
+        "finding": "CRITICAL. The 2025 Acts did NOT create an any-office rule, and they did NOT create a must-use-your-registration-office rule either. NTAA 2025 s.3 allocates jurisdiction only between the NRS and State/FCT authorities. s.3(1)(a) puts companies exclusively with the NRS, wherever they are. Which NRS office handles a company is an administrative matter of taxpayer segment - Emerging, Medium, Large, Government Business - not of where CAC registered it.",
+        "consequence": "A contractor told to travel to the state of registration to regularise has no published rule to check that instruction against, and no published rule to contest it with.",
+        "related": "Tax Appeal Tribunal has ruled against unilateral transfer of taxpayers' files based on FIRS guidelines and regulations.",
+        "sources": [
+          "https://siao.ng/wp-content/uploads/2025/09/Nigeria-Tax-Admin-Act-2025.pdf",
+          "https://www.nrs.gov.ng/news/news/news-release-2",
+          "https://assets.kpmg.com/content/dam/kpmg/ng/pdf/tat-rules-against-the-unilateral-transfer-of-taxpayers-files-based-on-firs-guidelines-and-regulations2.pdf"
+        ]
+      },
+      "agent_fee_naira": { "low": 250000, "high": 250000, "note": "Advertised openly, negotiable, Central Business District Abuja. A separate consultancy advertises 3-5 weeks turnaround against a statutory 2 weeks.", "source": "https://jiji.ng/central-business-district/tax-and-financial-services/you-will-get-tax-clearance-certificate-from-nigeria-revenue-service-pJ7BPjNAKhLNOqib5B3lnc94.html" },
+      "opacity": {
+        "requirements_published": "NO",
+        "fees_published": "NO",
+        "timeline_published": "STATUTE_ONLY",
+        "forms_available": "N/A",
+        "score": 2,
+        "failures": [
+          "No documents checklist for a TCC anywhere on NRS sites. The FCT state authority publishes one; the federal agency does not.",
+          "No published TCC fee",
+          "No published TCC validity period",
+          "No published service charter or turnaround for any taxpayer service",
+          "No published statement on office jurisdiction - neither permitting nor requiring a particular office",
+          "No Information Circular on TCC despite NRS publishing circulars on tax refunds and virtual assets"
+        ]
+      }
+    },
+
+    {
+      "id": "pencom",
+      "name": "National Pension Commission",
+      "short": "PenCom",
+      "certificate": "Pension Clearance Certificate (PCC)",
+      "statutory_basis": {
+        "instrument": "Public Procurement Act 2007 s.16(6)(d) makes it a bidding condition; Pension Reform Act 2014 supplies the underlying obligation",
+        "quote_ppa": "All bidders in addition to requirements contained in any solicitation documents shall: ... (d) have fulfilled all its obligations to pay taxes, pensions and social security contributions;",
+        "source": "https://ncdmb.gov.ng/images/Downloads/Public-Procurement-Act-2007.pdf"
+      },
+      "requirements": [
+        "Certified list of employees as at the end of the last fiscal year, on letterhead with official stamp",
+        "Certified rate of monthly pension contributions - minimum 10% employer and 8% employee",
+        "Evidence of remittance for the last 3 fiscal years, or from incorporation if younger",
+        "Evidence of remittance of all outstanding contributions and penalties",
+        "Evidence of transfer of pre-CPS pension fund assets, where applicable",
+        "Current group life insurance policy at 3x annual total emolument, with certificate, policy document and evidence of payment"
+      ],
+      "requirements_source": "https://www.pencom.gov.ng/wp-content/uploads/2017/04/PCC-REQUIREMENTS-1.pdf",
+      "official_fee": {
+        "status": "PUBLISHED",
+        "amount_naira": 0,
+        "quote": "PenCom does not charge any fees for processing the PCC and issuing it.",
+        "note": "The real cost is the underlying 18% of payroll plus the group life premium - not a certificate fee.",
+        "source": "https://www.pensionnigeria.com/pension-news/pencom-2022-application-requirements-for-pension-clearance-certificate-a-publication-by-pencom/"
+      },
+      "official_processing_time": {
+        "status": "PUBLISHED_BUT_CONFLICTING",
+        "figures": ["72 hours (current e-certificate guide)", "7 working days (PenCom, 2023 and 2024)", "15 working days (PenCom, 2022)"],
+        "detail": "Three mutually inconsistent official figures with no published reconciliation.",
+        "sources": [
+          "https://www.pencom.gov.ng/wp-content/uploads/2026/03/Step-by-Step-Guide-on-Pension-Clearance-E-Certificate.pdf",
+          "https://www.vanguardngr.com/2023/09/stop-using-agents-to-obtain-pension-certificates-pencom/",
+          "https://www.pensionnigeria.com/pension-news/pension-clearance-certificate-requirements-and-processing-a-publication-by-pencom/"
+        ]
+      },
+      "validity": {
+        "status": "PUBLISHED",
+        "rule": "Calendar year. Expires 31 December regardless of issue date.",
+        "quote": "The PCC issued by PenCom is valid for one year, from January to December ... regardless of the date of issuance, the validity of all PCCs expires by 31st December.",
+        "source": "https://www.pensionnigeria.com/pension-news/pension-clearance-certificate-requirements-and-processing-a-publication-by-pencom/"
+      },
+      "online_end_to_end": { "status": true, "portal": "https://pcc.pencom.gov.ng/", "detail": "E-PCC launched 31 October 2024. Parallel hard-copy running ended March 2025." },
+      "agents_prohibited": {
+        "status": true,
+        "quote": "The use of touts and agents to obtain pension clearance certificate is illegal and contrary to the provisions of section 104 (b) and (c) of the Pension Reform Act 2014.",
+        "source": "https://www.vanguardngr.com/2023/09/stop-using-agents-to-obtain-pension-certificates-pencom/"
+      },
+      "agent_fee_naira": { "low": 100000, "high": 250000, "note": "Charged for a certificate that is free, fully online, and whose agents PenCom has declared illegal.", "source": "https://ica.ng/costs-and-requirements-for-pencom-compliance-certificate-processing-in-nigeria/" },
+      "threshold_conflict": {
+        "detail": "PRA 2014 s.2(2) says 15 or more employees. PenCom's PCC portal forces a 3-staff certification. BPP's own guide says 15 personnel while BPP's own FAQ says a minimum of 5 employees. Three official sources, three different thresholds.",
+        "sources": ["https://bpp.gov.ng/guide", "https://bpp.gov.ng/faqs-2/", "https://www.pencom.gov.ng/wp-content/uploads/2026/03/Step-by-Step-Guide-on-Pension-Clearance-E-Certificate.pdf"]
+      },
+      "opacity": {
+        "requirements_published": "YES",
+        "fees_published": "YES",
+        "timeline_published": "CONFLICTING",
+        "forms_available": "YES",
+        "score": 6,
+        "failures": [
+          "Three conflicting published processing times with no reconciliation",
+          "No published exemption mechanism or exemption certificate for companies below the employee threshold",
+          "Requirements PDF dates from April 2017 and has not been reissued for the e-PCC era",
+          "Portal user manual is only available after registration"
+        ]
+      }
+    },
+
+    {
+      "id": "itf",
+      "name": "Industrial Training Fund",
+      "short": "ITF",
+      "certificate": "ITF Compliance Certificate",
+      "statutory_basis": {
+        "instrument": "Industrial Training Fund (Amendment) Act 2011, s.6(1)-(3)",
+        "quote": "Any supplier, contractor or consultant bidding, or soliciting contracts, businesses, goods, and services from any Federal Government Ministry, Department, Agency, Commercial, Industrial and Private entity shall fulfill the statutory obligations",
+        "source": "https://www.itf.gov.ng/ftp/2022%20ITF%20BROCHURE%20WPS.pdf"
+      },
+      "levy": {
+        "basis": "1% of total annual payroll",
+        "threshold": "5 or more employees, OR fewer than 5 employees with annual turnover of 50 million naira and above",
+        "deadline": "Not later than 1 April of the following year",
+        "source": "https://www.itf.gov.ng/ftp/2022%20ITF%20BROCHURE%20WPS.pdf"
+      },
+      "official_fee": { "status": "NOT_PUBLISHED", "detail": "The brochure implies the certificate follows from the levy e-receipt with no separate charge, but ITF publishes no fee schedule confirming this either way. The widely circulated flat-fee figures appear only on commercial agent sites." },
+      "official_processing_time": { "status": "NOT_PUBLISHED", "detail": "No turnaround stated in any surviving ITF document." },
+      "validity": { "status": "INFERRED", "rule": "Calendar year, expires 31 December - inferred from ITF's own tender adverts demanding certificates valid till 31st December. ITF does not state this directly.", "source": "https://itf.gov.ng/ftp/2020%20Advert%20for%20pre-qualification%20(1).pdf" },
+      "online_end_to_end": {
+        "status": false,
+        "detail": "ITF's own brochure requires physical attendance: the e-receipt enables you to collect your compliance certificate on presentation to the Area Office of Registration. 37 Area Offices nationwide.",
+        "source": "https://www.itf.gov.ng/ftp/2022%20ITF%20BROCHURE%20WPS.pdf"
+      },
+      "jurisdiction": { "status": "OFFICE_OF_REGISTRATION", "detail": "Certificate is collected at the Area Office of Registration - the same pattern that sent a contractor from Abuja to Lagos." },
+      "agent_fee_naira": { "low": 50000, "high": 200000, "source": "https://ica.ng/costs-and-requirements-for-itf-compliance-certificate-processing-in-nigeria/" },
+      "site_integrity_finding": {
+        "severity": "CRITICAL",
+        "detail": "As at 19 September 2026, itf.gov.ng/itf-compliance/ - the page that should carry the compliance-certificate requirements, and the top search result for it - serves Indonesian gambling affiliate spam instead of ITF content. Verified on both the trailing-slash and non-slash URLs. itf.gov.ng/about-us/ returns 404. No Wayback snapshot of the compliance page exists.",
+        "context": "Consistent with a documented campaign injecting spam into African government domains, reported 23 July 2026 as affecting NILDS, NEMA, NAERLS, EFCC, the Federal High Court, NBC, NEITI and others.",
+        "urls": ["https://www.itf.gov.ng/itf-compliance/", "https://techpoint.africa/insight/indonesian-gambling-syndicate-inside-africa/"],
+        "caution": "Separate claims of an ITF mailbox breach circulating on social media are UNVERIFIED and must not be repeated as fact."
+      },
+      "opacity": {
+        "requirements_published": "NO",
+        "fees_published": "NO",
+        "timeline_published": "NO",
+        "forms_available": "PARTIAL",
+        "score": 1,
+        "failures": [
+          "The compliance-certificate page serves gambling spam instead of government content",
+          "No official documents checklist exists anywhere - the circulating lists come only from commercial agents",
+          "No published processing time",
+          "No published certificate fee",
+          "No published exemption route for sub-threshold companies",
+          "Full text of the ITF (Amendment) Act 2011 is paywalled or robots-blocked on every free source found"
+        ]
+      }
+    },
+
+    {
+      "id": "nsitf",
+      "name": "Nigeria Social Insurance Trust Fund",
+      "short": "NSITF",
+      "certificate": "Employee Compensation Scheme Certificate of Compliance",
+      "statutory_basis": {
+        "instrument": "Employees' Compensation Act 2010, s.33(1)",
+        "detail": "Requires every employer to contribute 1% of total monthly payroll to the Employees' Compensation Fund. Penalty 5-10% per month on unremitted contributions.",
+        "source": "https://nsitf.gov.ng/services"
+      },
+      "requirements": [
+        "Form ECS RE01 - Registration of Employer",
+        "Form ECS RE03 - Employer Schedule of Payment",
+        "Certificate of Incorporation (CAC)",
+        "Official request letter for certification",
+        "Evidence of payment"
+      ],
+      "official_fee": { "status": "SOFT", "amount_naira": 50000, "detail": "NSITF's own page says 'approximately N50,000' - the hedge is on the official page. No gazetted fee schedule exists.", "source": "https://nsitf.gov.ng/services" },
+      "official_processing_time": { "status": "PUBLISHED", "detail": "Typically processed within 5 working days upon successful submission and verification of payment.", "source": "https://nsitf.gov.ng/services" },
+      "validity": { "status": "NOT_PUBLISHED", "detail": "No official statement of validity or renewal frequency anywhere on nsitf.gov.ng. Annual calendar-year expiry is inferred from MDA tender adverts demanding certificates valid till 31 December." },
+      "online_end_to_end": { "status": false, "portal": "https://ecsonline.nsitf.gov.ng/", "detail": "Employer onboarding is online but the compliance certificate requires a physical request letter plus an NSITF payroll assessment. Payment via Remita only after NSITF assesses - you cannot self-assess." },
+      "agent_fee_naira": { "low": 100000, "high": 250000, "source": "https://ica.ng/costs-and-requirements-for-nsitf-compliance-certificate-processing-in-nigeria/" },
+      "opacity": {
+        "requirements_published": "YES",
+        "fees_published": "SOFT",
+        "timeline_published": "YES",
+        "forms_available": "NO",
+        "score": 4,
+        "failures": [
+          "NSITF requires forms ECS RE01 and ECS RE03 that it does not distribute - all downloads on its resources page are marked 'Coming soon'",
+          "No published certificate validity period",
+          "Official fee is hedged as 'approximately' with no gazetted schedule",
+          "FAQ page lists exactly the right questions but renders answers for only the first one"
+        ]
+      }
+    },
+
+    {
+      "id": "bpp",
+      "name": "Bureau of Public Procurement",
+      "short": "BPP",
+      "certificate": "Interim Registration Report (IRR) / National Database of Federal Contractors registration",
+      "statutory_basis": {
+        "instrument": "Public Procurement Act 2007 s.5(h) and s.16(6)(d); SGF Circular Ref SGF/50/S.52/II of 11 December 2014",
+        "detail": "The SGF circular is what actually makes BPP registration a bid condition.",
+        "source": "https://www.fmw.gov.ng/themes/front_end_themes_01/images/uploads_images/151170250791458.pdf"
+      },
+      "official_fee": {
+        "status": "PUBLISHED",
+        "amount_naira": 0,
+        "quote": "No payment is required in order to be registered on the system.",
+        "detail": "Free for local companies. Foreign-company and renewal fees are 'to be determined' and remain unpublished. There is no tiered fee schedule by category.",
+        "source": "https://bpp.gov.ng/guide"
+      },
+      "official_processing_time": { "status": "NOT_PUBLISHED", "detail": "No SLA, no turnaround, no target days for IRR issuance or full certificate issuance. The only timing statement is that login credentials arrive 'shortly'." },
+      "validity": { "status": "PUBLISHED", "rule": "Annual, renewable from the first month of the new year. Lapsed registration is flagged as dormant. Changes to company particulars can only be updated after a minimum of 60 days.", "source": "https://bpp.gov.ng/faqs-2/" },
+      "online_end_to_end": { "status": true, "portal": "https://federalcontractors.bpp.gov.ng/" },
+      "irr_note": "The IRR is explicitly interim - evidence of registration while the company's claims are being verified, not proof of full registration. No published criteria state what converts an IRR into a full BPP certificate, or how long verification takes.",
+      "agent_fee_naira": { "low": 25000, "high": 100000, "note": "Charged for a registration that is free of charge.", "source": "https://ica.ng/requirements-for-bpp-registration-in-nigeria/" },
+      "opacity": {
+        "requirements_published": "PARTIAL",
+        "fees_published": "YES",
+        "timeline_published": "NO",
+        "forms_available": "PARTIAL",
+        "score": 3,
+        "failures": [
+          "The Public Procurement Act 2007 - the Bureau's own governing statute - 404s on four different BPP-hosted URLs. The regulator does not serve its own law.",
+          "The 11 December 2014 circular that makes BPP registration a bid condition is listed on bpp.gov.ng but both hosted copies fail - 404 or no extractable text",
+          "The main FAQ page at bpp.gov.ng/faqs/ contains unfinished placeholder lorem ipsum about managed IT services. Real content sits at the differently-named /faqs-2/",
+          "'Interim Registration Report' and 'IRR' do not appear anywhere on BPP's own site, despite every federal tender demanding the document by name",
+          "No published classification model despite classes A-E being referenced",
+          "No published processing time",
+          "The portal landing page publishes no requirements, no fees and no documentation"
+        ]
+      }
+    }
+  ]
+}
